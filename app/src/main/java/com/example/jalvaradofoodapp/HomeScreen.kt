@@ -1,5 +1,6 @@
 package com.example.jalvaradofoodapp
 
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,21 +11,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jalvaradofoodapp.Elements.Header
 import com.example.jalvaradofoodapp.Elements.CategoriaFila
+import com.example.jalvaradofoodapp.Elements.Restaurantes
 
 @Composable
-fun HomeScreen(innerPadding : PaddingValues){
+fun HomeScreen(innerPadding : PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(
-                innerPadding
-            )
+            .padding(innerPadding)
             .padding(horizontal = 15.dp, vertical = 25.dp)
-    ){  //Header
+    ) {  //Header
         Header()
-
         //Categorias
         CategoriaFila()
+        //Restaurantes
+        Restaurantes()
 
 
     }

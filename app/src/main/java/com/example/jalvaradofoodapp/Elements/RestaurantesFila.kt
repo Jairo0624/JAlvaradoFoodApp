@@ -1,6 +1,5 @@
 package com.example.jalvaradofoodapp.Elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,20 +25,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.example.jalvaradofoodapp.Model.categorias
+import com.example.jalvaradofoodapp.Model.restaurantes
 import com.example.jalvaradofoodapp.R
 import com.example.jalvaradofoodapp.ui.theme.Grisaseo
-import com.example.jalvaradofoodapp.ui.theme.RojoPrincipal
 
 @Composable
-fun CategoriaFila(){
+fun Restaurantes(){
     Text(
-        text = "Nuestras categorias",
+        text = "Busca los Mejores\nRestaurantes",
         fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
         style = MaterialTheme.typography.bodyMedium,
         color = Grisaseo,
-        modifier = Modifier.padding(vertical = 10.dp, horizontal = 5.dp)
+        lineHeight = 28.sp,
+        modifier = Modifier.padding(vertical = 10.dp,  horizontal = 5.dp)
     )
 
     LazyRow(
@@ -48,24 +47,22 @@ fun CategoriaFila(){
             .padding(8.dp),
         horizontalArrangement = Arrangement.spacedBy(14.dp)
     ) {
-        items(categorias) {
+        items(restaurantes) { restaurante ->
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.width(100.dp)
             ) {
-                // Caja circular para la imagen
                 Box(
                     modifier = Modifier
                         .size(90.dp)
-                        .clip(CircleShape)
-                        .background(RojoPrincipal),
+                        .clip(CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
                     AsyncImage(
-                        model = it.imagen,
-                        contentDescription = it.titulo,
+                        model = restaurante.imagen,
+                        contentDescription = restaurante.titulo,
                         modifier = Modifier
-                            .size(70.dp)
+                            .size(90.dp)
                             .clip(CircleShape),
                         placeholder = painterResource(R.drawable.ic_launcher_foreground),
                         contentScale = ContentScale.Crop
@@ -75,13 +72,15 @@ fun CategoriaFila(){
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Text(
-                    text = it.titulo,
+                    text = restaurante.titulo,
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Bold,
                     color = Color.DarkGray
                 )
             }
-        }
-    }
 
+        }
+
+
+    }
 }

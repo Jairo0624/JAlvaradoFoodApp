@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,7 +29,7 @@ fun Header(){
     //Header
     Row(
         modifier = Modifier.fillMaxWidth()
-            .padding( horizontal = 5.dp , vertical = 14.dp),
+            .padding( horizontal = 3.dp , vertical = 14.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -49,6 +50,7 @@ fun Header(){
                 text = "Hola Jairo",
                 fontSize = 26.sp,
                 fontWeight = FontWeight.Medium,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Grisaseo
             )
 
