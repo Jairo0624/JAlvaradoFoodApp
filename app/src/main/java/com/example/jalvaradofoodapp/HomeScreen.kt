@@ -4,15 +4,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.jalvaradofoodapp.Elements.Header
-import com.example.jalvaradofoodapp.ui.theme.Grisaseo
+import com.example.jalvaradofoodapp.Elements.CategoriaFila
 
 @Composable
 fun HomeScreen(innerPadding : PaddingValues){
@@ -26,16 +23,15 @@ fun HomeScreen(innerPadding : PaddingValues){
     ){  //Header
         Header()
 
-        Text(
-            text = "Nuestras categorias",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Medium,
-            color = Grisaseo,
-            modifier = Modifier.padding(vertical = 10.dp)
-        )
+        //Categorias
+        CategoriaFila()
+
 
     }
 }
+
+
+
 
 @Preview(
     showBackground = true,
